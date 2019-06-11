@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/shop', function () {
+    echo'This is shop';
+});
+
+
+Route::get('/shop/product/{id?}', function ($id = null) {
+    echo'This is shop/product ' . $id;
+});
+
+
+Route::get('/product', function () {
+    echo'This is product';
+});
+
