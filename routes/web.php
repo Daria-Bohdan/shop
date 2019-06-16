@@ -30,3 +30,7 @@ Route::get('/product', function () {
     echo'This is product';
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
