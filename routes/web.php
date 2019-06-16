@@ -17,7 +17,12 @@ Route::get('/', function () {
 
 
 Route::get('/shop', function () {
-    echo'This is shop';
+   // $user = new \App\Users();
+
+$user = \App\Users ::where('email','admin@admin.com')->where('username','Bohdan')->get();
+
+    echo '<pre>';
+    var_dump($user);
 });
 
 
