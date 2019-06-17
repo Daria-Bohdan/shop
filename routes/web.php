@@ -11,18 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@index');
+
+
+Route::get('/login', 'UserController@getLogin');
+
+
+Route:: post('/login', 'UserController@postLogin');
+
 
 
 Route::get('/shop', function () {
-   // $user = new \App\Users();
-
-$user = \App\Users ::where('email','admin@admin.com')->where('username','Bohdan')->get();
-
-    echo '<pre>';
-    var_dump($user);
+  
 });
 
 
@@ -36,6 +36,6 @@ Route::get('/product', function () {
 });
 
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
