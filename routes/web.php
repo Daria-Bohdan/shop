@@ -15,9 +15,11 @@ Route::get('/', 'IndexController@index');
 
 
 Route::get('/login', 'UserController@getLogin');
-
-
 Route:: post('/login', 'UserController@postLogin');
+
+
+Route::get('/signup', 'UserController@getSignup');
+Route:: post('/signup', 'UserController@postSignup');
 
 
 
