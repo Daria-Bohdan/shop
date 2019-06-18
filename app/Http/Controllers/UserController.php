@@ -13,10 +13,18 @@ class UserController extends Controller
  		return view('login');
  }
 
- 	public function postLogin(Request $request) {
- 		var_dump($request->post());
+    public function postLogin(Request $request) {
+        $user = Users::where('email', $request->post('email'))->first();
 
- }
+        if ($user !== null && Hash::check($request->post('password'), $user->password) === true) {
+            Auth::login($user);
+
+            return view('index');
+        } else {
+            return view('login');
+        }
+    }
+
  	 public function getSignup() {
  		return view('signup');
  }
@@ -38,7 +46,7 @@ class UserController extends Controller
 
  			if ($user->save() === true) {
 
- 				echo 'logged';
+ 				Auth::login($user);
 
  				return redirect('/');
  			} 
@@ -55,5 +63,10 @@ class UserController extends Controller
 			exit;
 		}
 
-	 }		
+	 }	
+
+	 public function logout(){
+	 	Auth::logout();
+	 	return view('index');
+	 }	
 }

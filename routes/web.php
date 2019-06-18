@@ -21,6 +21,9 @@ Route:: post('/login', 'UserController@postLogin');
 Route::get('/signup', 'UserController@getSignup');
 Route:: post('/signup', 'UserController@postSignup');
 
+Route::get('/logout', 'UserController@logout');
+
+
 
 
 Route::get('/shop', function () {
