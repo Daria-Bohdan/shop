@@ -24,23 +24,21 @@ Route:: post('/signup', 'UserController@postSignup');
 Route::get('/logout', 'UserController@logout');
 
 
-
-
 Route::get('/shop', function () {
   
 });
 
 
-Route::get('/shop/product/{id?}', function ($id = null) {
+Route::get('/shop/product/{id?}', function ($id = 'null') {
     echo'This is shop/product ' . $id;
 });
 
 
 Route::get('/product', function () {
-    echo'This is product';
+   return view('about_us');
 });
 
 
 //Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

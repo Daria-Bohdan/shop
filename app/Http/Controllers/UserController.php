@@ -9,9 +9,10 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-     public function getLogin() {
- 		return view('login');
- }
+
+    public function getLogin() {
+        return view('login');
+    }
 
     public function postLogin(Request $request) {
         $user = Users::where('email', $request->post('email'))->first();
@@ -25,48 +26,45 @@ class UserController extends Controller
         }
     }
 
- 	 public function getSignup() {
- 		return view('signup');
- }
+    public function getSignup() {
+        return view('signup');
+    }
 
- 	public function postSignup(Request $request) {
- 		$user = Users ::where('email', $request->post('email'))->first();
+    public function postSignup(Request $request) {
+        $user = Users::where('email', $request->post('email'))->first();
 
- 		if ($user !== null) {
- 			echo 'email already exist';
- 			exit;
- 		}
+        if ($user !== null) {
+            echo 'email already exist';
 
- 		if ($request->post('password1')=== $request->post('password2')) {
- 			$user = new Users();
+            exit;
+        }
 
- 			$user->username = $request->post('username');
- 			$user->email = $request->post('email');
- 			$user->password = Hash ::make($request->post('password1'));
+        if ($request->post('password1') === $request->post('password2')) {
+            $user = new Users();
 
- 			if ($user->save() === true) {
+            $user->username = $request->post('username');
+            $user->email    = $request->post('email');
+            $user->password = Hash::make($request->post('password1'));
 
- 				Auth::login($user);
+            if ($user->save() === true) {
+                Auth::login($user);
 
- 				return redirect('/');
- 			} 
- 			else {
+                return redirect('/');
+            } else {
 
- 			}
+            }
 
 
- 		    var_dump($request->post());
-		}
-		else {
+        } else {
+            echo 'passwords different';
 
-			echo 'passwords different';
-			exit;
-		}
+            exit;
+        }
+    }
 
-	 }	
+    public function logout() {
+        Auth::logout();
 
-	 public function logout(){
-	 	Auth::logout();
-	 	return view('index');
-	 }	
+        return view('index');
+    }
 }

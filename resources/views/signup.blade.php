@@ -1,10 +1,10 @@
- @extends('layouts.master')
+@extends('layouts.master')
 
- @section('content')
- 
-	<h3>Login</h3>
+@section('content')
 
- <form action="" method="post">
+    <h3>Login</h3>
+
+    <form action="" method="post">
         @csrf
         <div class="form-group">
             <label for="username">Username</label>
@@ -27,8 +27,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
- @endsection()
-
+@endsection
 
 
 				
