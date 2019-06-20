@@ -24,21 +24,6 @@ Route:: post('/signup', 'UserController@postSignup');
 Route::get('/logout', 'UserController@logout');
 
 
-Route::get('/shop', function () {
-  
-});
-
-
-Route::get('/shop/product/{id?}', function ($id = 'null') {
-    echo'This is shop/product ' . $id;
-});
-
-
-Route::get('/product', function () {
-   return view('about_us');
-});
-
-
-//Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/shop/','ShopController@index');
+Route::get('/shop/{category_id}','ShopController@category');
+Route::get('/shop/{category_id}/{product_id}','ShopController@product');
