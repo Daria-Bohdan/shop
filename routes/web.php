@@ -27,3 +27,11 @@ Route::get('/logout', 'UserController@logout');
 Route::get('/shop/','ShopController@index');
 Route::get('/shop/{category_id}','ShopController@category');
 Route::get('/shop/{category_id}/{product_id}','ShopController@product');
+
+
+Route::middleware('isAdmin')->prefix('admin')->group(function () {
+
+	Route::get('/create-product', 'AdminController@createProduct');
+	Route::post('/create-product', 'AdminController@saveProduct');
+
+});	
