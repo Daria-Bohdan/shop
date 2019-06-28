@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+    public function index() {
+        return view ('admin.index');
+    }
+
+
     public function createProduct() {
         return view('admin.product.create');
     }

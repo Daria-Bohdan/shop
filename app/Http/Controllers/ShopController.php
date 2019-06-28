@@ -19,6 +19,8 @@ class ShopController extends Controller
     }
 
     public function product ($categoryId, $productId) {
-    	echo 'product' . $categoryId . ' ' . $productId;
+        $product = Product::find($productId);
+    	
+        return view('product', ['product' => $product]);
     }
 }
