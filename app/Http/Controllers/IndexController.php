@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Auth;
 class IndexController extends Controller
 {
     public function index() {
-    	return view('index');
-	}
+        return view('index');
+    }
+
+    public function getOrders() {
+        $user = Auth::user();
+
+        return view('orders', ['orders' => $user->orders]);
+    }
+
 }
+

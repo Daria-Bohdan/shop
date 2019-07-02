@@ -11,6 +11,16 @@ class Basket
 
 	static public function getBasket() {
 		$basket = Session::get('basket');
+
+
+		if ($basket === null) {
+
+			$basket = [];
+
+			Session::put('basket', $basket);
+
+		}
+
 		$ids = array_keys($basket);
 		$products = Product::find($ids);
 

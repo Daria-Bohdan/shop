@@ -7,6 +7,8 @@ use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+//use mysql_xdevapi\Session;
+
 
 class BasketController extends Controller
 {
@@ -36,6 +38,11 @@ class BasketController extends Controller
 
 
     public function checkout() {
+
+         if (Auth::guest() === true) {
+            echo 'Please login'; exit;
+        }
+
     	$basket = Basket ::getBasket();
     	$order = new Order;
     	$order ->users_id = Auth::user()->id;

@@ -29,6 +29,9 @@ Route::get('/shop/{category_id}','ShopController@category');
 Route::get('/shop/{category_id}/{product_id}','ShopController@product');
 
 
+Route::get('/orders', 'IndexController@getOrders');
+
+
 Route::middleware('isAdmin')->prefix('admin')->group(function () {
 	Route::get('/', 'AdminController@index');
 	Route::get('/create-product', 'AdminController@createProduct');

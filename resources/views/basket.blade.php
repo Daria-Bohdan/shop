@@ -13,12 +13,12 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($products as $product)
+         @foreach($products as $product)
             <tr>
                 <th scope="row">{{ $product['id'] }}</th>
                 <td>{{ $product['name'] }}</td>
-                <td>{{ $product['qt']  }}</td>
-                <td>{{ $product['price']  }}</td>
+                <td>{{ $product['qt'] }}</td>
+                <td>{{ $product['price'] }}</td>
             </tr>
         @endforeach
         </tbody>

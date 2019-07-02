@@ -12,6 +12,6 @@ class Users extends \Illuminate\Foundation\Auth\User
     protected $table = 'users';
 
     public function orders() {
-    	return $this->hasMany('\App\Order', 'users-id');
+    	return $this->hasMany('\App\Order', 'users_id');
     }
 }
