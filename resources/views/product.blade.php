@@ -15,7 +15,7 @@
 			@csrf
 			<input type="hidden" value="{{ $product->id }}" name="product_id">
 			<input type="number" class="form-control" name="quantity">
-			<button class="btn btn-info">Buy</button>
+			<button class="btn btn-info" id="buy-btn">Buy</button>
 		</form>			
 	</div>
 @endsection

@@ -19,9 +19,9 @@ class BasketController extends Controller
 
     public function addToBasket(Request $request) {
 
-        //echo 'Add btn clicked';
+        echo 'Add btn clicked';
 
-        $basket = $request->session()->get('basket');
+        /*$basket = $request->session()->get('basket');
         $id     = $request->input('product_id');
         $qt     = (int) $request->input('quantity');
 
@@ -33,7 +33,7 @@ class BasketController extends Controller
 
         $request->session()->put('basket', $basket);
 
-        return redirect('basket');
+        return redirect('basket');*/
 
     }
 
