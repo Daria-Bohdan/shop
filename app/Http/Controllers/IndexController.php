@@ -11,11 +11,12 @@ class IndexController extends Controller
         return view('index');
     }
 
-    public function getOrders() {
+    public function getOrders () {
         $user = Auth::user();
 
         return view('orders', ['orders' => $user->orders]);
     }
 
 }
+
 

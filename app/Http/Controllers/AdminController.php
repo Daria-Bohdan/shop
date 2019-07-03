@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\Product;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
@@ -10,9 +11,8 @@ use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     public function index() {
-        return view ('admin.index');
+        return view('admin.index');
     }
-
 
     public function createProduct() {
         return view('admin.product.create');
@@ -36,5 +36,12 @@ class AdminController extends Controller
         $product->save();
 
         return view('admin.product.create');
+    }
+
+    public function orders() {
+
+        $orders = Order::all();
+
+        return view('admin.orders', ['orders' => $orders]);
     }
 }

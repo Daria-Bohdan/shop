@@ -36,6 +36,7 @@ Route::middleware('isAdmin')->prefix('admin')->group(function () {
 	Route::get('/', 'AdminController@index');
 	Route::get('/create-product', 'AdminController@createProduct');
 	Route::post('/create-product', 'AdminController@saveProduct');
+	Route::get('/orders', 'AdminController@orders');
 
 });	
 
@@ -43,5 +44,6 @@ Route::prefix('basket')->group(function() {
 	Route::post('/add', 'BasketController@addToBasket');
 	Route::get('/', 'BasketController@index');
 	Route::get('/checkout', 'BasketController@checkout');
+	Route::post('/deleteProduct', 'BasketController@deleteProduct');
 });
 

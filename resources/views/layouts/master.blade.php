@@ -36,6 +36,9 @@
                     <a class="nav-link" href="{{ url('/logout') }}">Logout</a>
                 </li>
             @endif
+                <li class="nav-item">
+                     <a class="nav-link" href="{{ url('/basket') }}">Basket 0</a>
+                </li>
 
         </ul>
 
