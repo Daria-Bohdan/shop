@@ -40,4 +40,22 @@ class Basket
         return  ['products' => $result, 'total' => $total];
 
     }
+
+
+    static public function getBasketCount() {
+        $basket = Session::get('basket');
+
+        if ($basket === null) {
+            $basket = [];
+
+            Session::put('basket', $basket);
+    }
+
+    $count = 0;
+    foreach ($basket as $quantity) {
+        $count += $quantity;
+       
+     }
+     return $count;
+   }
 }

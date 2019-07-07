@@ -17,11 +17,11 @@ class BasketController extends Controller
         return view('basket', $result);
     }
 
+
+
     public function addToBasket(Request $request) {
 
-        echo 'Add btn clicked';
-
-        /*$basket = $request->session()->get('basket');
+        $basket = $request->session()->get('basket');
         $id     = $request->input('product_id');
         $qt     = (int) $request->input('quantity');
 
@@ -32,10 +32,11 @@ class BasketController extends Controller
         }
 
         $request->session()->put('basket', $basket);
-
-        return redirect('basket');*/
+        return Basket::getBasketCount();
 
     }
+
+
 
     public function checkout() {
         if (Auth::guest() === true) {
@@ -61,6 +62,9 @@ class BasketController extends Controller
 
         $order->products()->attach($productIds);
     }
+
+
+    
 
     public function deleteProduct(Request $request) {
         $id = $request->input('id');

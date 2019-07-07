@@ -23,6 +23,9 @@ Route:: post('/signup', 'UserController@postSignup');
 
 Route::get('/logout', 'UserController@logout');
 
+Route::get('/search', 'IndexController@search');
+Route::get('/search2', 'IndexController@search2');
+
 
 Route::get('/shop/','ShopController@index');
 Route::get('/shop/{category_id}','ShopController@category');

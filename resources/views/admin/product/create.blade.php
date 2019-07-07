@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="image">Image</label>
-            <input type="file" accept="image/x-png,image/gif,image/jpeg"  name="image" class="form-control-file" id="image" placeholder="Upload image">
+            <input type="file" name="image" class="form-control-file" id="image" placeholder="Upload image">
         </div>
         <div class="form-group">
             <label for="description">Description</label>
