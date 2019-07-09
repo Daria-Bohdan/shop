@@ -61,6 +61,11 @@ class BasketController extends Controller
         $order->save();
 
         $order->products()->attach($productIds);
+
+
+        return redirect('/');
+
+
     }
 
 

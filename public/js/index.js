@@ -18,6 +18,7 @@ $(document).ready(function () {
 
 
 
+
     $('[type="search"]').on('keyup', function (event) {
         var searchWord = $(event.currentTarget).val();
 

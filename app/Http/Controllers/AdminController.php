@@ -26,7 +26,7 @@ class AdminController extends Controller
         if ($request->hasFile('image') === true) {
             $file = $request->file('image');
 
-            Storage::disk('public')->put('product/' . $file->getClientOriginalName(), $file->getRealPath());
+            Storage::disk('public')->put('product/' . $file->getClientOriginalName(), fopen($file->getRealPath(), 'r+'));
 
             $product->image = $file->getClientOriginalName();
         }

@@ -44,6 +44,12 @@
                         <a class="nav-link" href="{{ url('/admin/orders') }}">All Orders</a>
                     </li>
                 @endif
+
+                @if (\Illuminate\Support\Facades\Auth::user()->role === \App\Users::ROLE_ADMIN)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/admin/create-product') }}">Create product</a>
+                    </li>
+                @endif
             @endif
 
             <li class="nav-item">
