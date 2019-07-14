@@ -2,7 +2,24 @@
     position: absolute;
     top: 80px;
     right: 100px;
-    background-color: grey;
+    background-color:#60cbe6;;
     padding: 10px;
     box-shadow: 1px 1px 1px black;
+     text-decoration: none;
 }
+
+
+
+
+
+/*new*/
+
+body{
+    background: fixed #000 url(../storage/images/body.png);
+    overflow: hidden;
+}
+
+
+
+
+
