@@ -14,12 +14,31 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+     public function products() {
+        $products = Product::all();
+
+        return view('admin.product.products', ['products' => $products]);
+    }
+
+
+     public function updateProduct($id) {
+        $product = Product::find($id);
+
+        return view('admin.product.create', ['product' => $product]);
+    }
+
+
     public function createProduct() {
         return view('admin.product.create');
     }
 
     public function  saveProduct (Request $request) {
-        $product = new Product();
+         if ($request->input('id') !== null) {
+            $product = Product::find($request->input('id'));
+        } else {
+            $product = new Product();
+        }
+
 
         $product->fill($request->post());
 

@@ -35,7 +35,7 @@ $(document).ready(function () {
 
                 for (let i = 0; i < result.length; i++) {
                     list += '<li><a href="/shop/1/' + result[i]['id'] + '">' +
-                        '<img src="' + result[i]['image'] + '" alt=""> ' +
+                        '<img src="/storage/product/' + result[i]['image'] + '" alt=""> ' +
                         '<span><strong>' + result[i]['name'] + '</strong></span> ' +
                         '<span>price:' + result[i]['price'] + ' $</span>' +
                         '</li></a>';

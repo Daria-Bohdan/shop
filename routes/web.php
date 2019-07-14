@@ -41,6 +41,11 @@ Route::middleware('isAdmin')->prefix('admin')->group(function () {
 	Route::post('/create-product', 'AdminController@saveProduct');
 	Route::get('/orders', 'AdminController@orders');
 
+
+	Route::get('/update-product/{product_id}', 'AdminController@updateProduct');
+	Route::post('/update-product/{product_id}', 'AdminController@saveProduct');
+	Route::get('/products', 'AdminController@products');
+
 });	
 
 Route::prefix('basket')->group(function() {
