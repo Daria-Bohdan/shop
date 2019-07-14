@@ -36,15 +36,15 @@ Route::get('/orders', 'IndexController@getOrders');
 
 
 Route::middleware('isAdmin')->prefix('admin')->group(function () {
-	Route::get('/', 'AdminController@index');
-	Route::get('/create-product', 'AdminController@createProduct');
-	Route::post('/create-product', 'AdminController@saveProduct');
-	Route::get('/orders', 'AdminController@orders');
+    Route::get('/', 'AdminController@index');
+    Route::get('/create-product', 'AdminController@createProduct');
+    Route::post('/create-product', 'AdminController@saveProduct');
+    Route::get('/orders', 'AdminController@orders');
 
-
-	Route::get('/update-product/{product_id}', 'AdminController@updateProduct');
-	Route::post('/update-product/{product_id}', 'AdminController@saveProduct');
-	Route::get('/products', 'AdminController@products');
+    Route::get('/update-product/{product_id}', 'AdminController@updateProduct');
+    Route::post('/update-product/{product_id}', 'AdminController@saveProduct');
+    Route::get('/products', 'AdminController@products');
+    Route::get('/delete-product/{id}', 'AdminController@deleteProduct');
 
 });	
 
